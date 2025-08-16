@@ -6,7 +6,7 @@ Tampilan Aplikasi
 Antarmuka menu telah diperluas untuk mencakup berbagai alat informasi dan diagnostik sistem.
 
 ┌──────────────────────────────────────────────────┐
-│ ===  Security Audit & System Info Dashboard  === │
+│ ===== Security Audit & System Info Dashboard ===== │
 ├──────────────────────────────────────────────────┤
 │ --- Audit Keamanan ---                           │
 │ > Jalankan Lynis Audit                           │
