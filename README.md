@@ -12,9 +12,6 @@
 
 ## 📺 Demo / Preview
 
-[![asciicast](https://asciinema.org/a/123456.svg)](https://asciinema.org/a/123456)
-
-*(Klik untuk melihat demo interaktif via Asciinema)*
 
 ---
 
@@ -43,8 +40,8 @@
 
 ### Metode 1: Instalasi via Skrip (Direkomendasikan)
 ```bash
-git clone https://github.com/ekawipa/security-dashboard.git
-cd security-dashboard
+git clone https://github.com/ekawipa/DashboardSecAudit.git
+cd DashboardSecAudit
 chmod +x install.sh
 sudo ./install.sh
 
