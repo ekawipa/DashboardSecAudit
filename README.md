@@ -5,14 +5,13 @@
 ![Platform](https://img.shields.io/badge/platform-Ubuntu%2FDebian-lightgrey.svg)
 ![Status](https://img.shields.io/badge/status-stable-success.svg)
 
-> **All-in-One Terminal Dashboard** untuk mempercepat dan menyederhanakan tugas tim Blue Team, sysadmin, dan analis keamanan.  
-> Menyediakan antarmuka menu tunggal untuk audit keamanan, pemeriksaan konfigurasi sistem, serta pemantauan jaringan pada distribusi **Ubuntu/Debian**.
+> **All-in-One Terminal Dashboard** untuk mempercepat dan menyederhanakan tugas Blue Team Sec Ops, sysadmin, dan analis keamanan.  
+> Menyediakan antarmuka menu tunggal untuk audit keamanan, pemeriksaan konfigurasi sistem, serta pemantauan jaringan pada distribusi **OS Ubuntu/Debian**.
 
 ---
 
 ## 📺 Demo / Preview
-
-
+[ on progres ]
 ---
 
 ## 📌 Fitur Utama
@@ -36,8 +35,14 @@
 
 ---
 
-## 🚀 Instalasi & Penggunaan
+📜 Lisensi
+Proyek ini dilisensikan di bawah MIT License.
+Author: Eka W. Prasetya (defsecOPS · @ekawprasetya)
 
+----
+
+
+## 🚀 Instalasi & Penggunaan
 ### Metode 1: Instalasi via Skrip (Direkomendasikan)
 ```bash
 git clone https://github.com/ekawipa/DashboardSecAudit.git
@@ -84,8 +89,3 @@ Kontribusi sangat terbuka 🙌
     Buat Issue untuk bug/fitur baru
 
     Ajukan Pull Request untuk perbaikan
-
-📜 Lisensi
-
-Proyek ini dilisensikan di bawah MIT License.
-Author: Eka W. Prasetya (defsecOPS · @ekawprasetya)
