@@ -1,137 +1,94 @@
-Dashboard Audit Keamanan Terminal (Edisi Lanjutan)
+# 🛡️ Security Audit & System Info Dashboard (Advanced Edition)
 
-Sebuah dashboard all-in-one berbasis terminal yang dirancang untuk mempercepat dan menyederhanakan tugas-tugas tim biru (Blue Team), administrator sistem, dan analis keamanan. Aplikasi ini menyediakan antarmuka menu tunggal untuk menjalankan audit keamanan, memeriksa konfigurasi sistem, dan memantau status jaringan pada sistem operasi berbasis Ubuntu/Debian.
-Tampilan Aplikasi
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Ubuntu%2FDebian-lightgrey.svg)
+![Status](https://img.shields.io/badge/status-stable-success.svg)
 
-Antarmuka menu telah diperluas untuk mencakup berbagai alat informasi dan diagnostik sistem.
+> **All-in-One Terminal Dashboard** untuk mempercepat dan menyederhanakan tugas tim Blue Team, sysadmin, dan analis keamanan.  
+> Menyediakan antarmuka menu tunggal untuk audit keamanan, pemeriksaan konfigurasi sistem, serta pemantauan jaringan pada distribusi **Ubuntu/Debian**.
 
-┌──────────────────────────────────────────────────┐
-│ ===== Security Audit & System Info Dashboard ===== │
-├──────────────────────────────────────────────────┤
-│ --- Audit Keamanan ---                           │
-│ > Jalankan Lynis Audit                           │
-│   Jalankan Rkhunter Scan                         │
-│   Jalankan OpenSCAP Scan                         │
-│ --- Informasi & Konfigurasi Sistem ---           │
-│   Lihat Port yang Listening                      │
-│   Lihat Service yang Berjalan                    │
-│   Lihat Info Hardware & Kernel                   │
-│   Periksa Status Firewall                        │
-│   Lihat Konfigurasi Jaringan (ip addr)           │
-│   Lihat Tabel Routing                            │
-│   Lihat Aturan Iptables                          │
-│   Periksa Konfigurasi SSHD                       │
-│   Cek Web Service & Plugin                       │
-│ ---                                              │
-│   Keluar                                         │
-└──────────────────────────────────────────────────┘
+---
 
+## 📺 Demo / Preview
 
-✨ Fitur Unggulan
+[![asciicast](https://asciinema.org/a/123456.svg)](https://asciinema.org/a/123456)
 
-Proyek ini telah berevolusi dari sekadar launcher menjadi toolkit yang lebih cerdas:
-Audit Keamanan Terpusat
+*(Klik untuk melihat demo interaktif via Asciinema)*
 
-    Lynis: Jalankan audit pengerasan keamanan sistem secara menyeluruh.
+---
 
-    Rkhunter: Pindai sistem untuk mencari rootkit, backdoor, dan exploit lokal.
+## 📌 Fitur Utama
 
-    OpenSCAP: Lakukan pemindaian kepatuhan (compliance) terhadap standar keamanan formal seperti CIS Benchmarks.
+### 🔍 Audit Keamanan Terpusat
+- **Lynis** → Audit keamanan sistem secara menyeluruh  
+- **Rkhunter** → Pindai rootkit, backdoor, exploit lokal  
+- **OpenSCAP** → Pemindaian compliance (CIS Benchmarks, dsb.)
 
-Informasi Sistem Real-time
+### 🖥️ Informasi Sistem Real-time
+- **Jaringan**: port terbuka (`ss`), konfigurasi IP (`ip addr`), routing table, iptables  
+- **Layanan**: status systemd services, firewall (UFW/Firewalld)  
+- **Hardware & OS**: kernel, CPU, memory usage  
+- **Konfigurasi Kritis**: SSHD audit, web service (Apache/Nginx) + modul/plugin aktif  
 
-    Jaringan: Lihat port yang terbuka (ss), konfigurasi IP, tabel routing, dan aturan iptables.
+### 🤖 Fitur Cerdas
+- ✅ **Auto-dependency check & install** (tool & Python libs)  
+- 📝 **Logging session** → hasil audit tersimpan otomatis di `logs/` dengan timestamp  
+- 📦 **SCAP content auto-detect** (SSG sesuai distro & versi)  
+- 🖥️ **UI intuitif** berbasis terminal (navigasi keyboard)  
 
-    Layanan (Services): Tampilkan semua layanan systemd yang aktif dan periksa status firewall (UFW atau Firewalld).
+---
 
-    Perangkat Keras & OS: Dapatkan informasi cepat mengenai Kernel, CPU, dan penggunaan memori.
+## 🚀 Instalasi & Penggunaan
 
-    Konfigurasi Kritis: Audit konfigurasi efektif SSHD dan deteksi layanan web (Apache/Nginx) beserta modul yang sedang berjalan.
-
-Fitur Cerdas
-
-    ✅ Pemeriksaan & Instalasi Dependensi Otomatis: Skrip akan mendeteksi tool atau pustaka Python yang hilang dan menawarkan untuk menginstalnya secara otomatis saat pertama kali dijalankan.
-
-    📝 Pencatatan Sesi (Logging): Setiap sesi dan output perintah penting secara otomatis dicatat ke dalam direktori logs/ dengan stempel waktu, menciptakan jejak audit (audit trail) yang berguna.
-
-    🤖 Deteksi Konten SCAP Dinamis: Secara otomatis menemukan file konten SCAP Security Guide (SSG) yang relevan untuk distribusi (Ubuntu/Debian) dan versi Anda.
-
-    🖥️ Antarmuka Intuitif: Menu yang bersih dan navigasi yang mudah menggunakan keyboard, membuat semua fitur dapat diakses dengan cepat.
-
-🚀 Instalasi dan Penggunaan
-
-Anda bisa memilih salah satu dari dua metode instalasi berikut.
-Metode 1: Menggunakan Skrip Instalasi (Disarankan untuk Awal)
-
-Metode ini akan menyiapkan semuanya untuk Anda, cocok untuk sistem yang bersih.
-
-    Clone Repositori
-
-    git clone [URL_REPOSITORI_ANDA_DI_SINI]
-    cd [NAMA_DIREKTORI_REPOSITORI]
-
-
-    Jalankan Skrip Instalasi
-    Skrip ini akan menginstal semua tool sistem dan pustaka Python yang dibutuhkan.
-
-    chmod +x install.sh
-    sudo ./install.sh
-
+### Metode 1: Instalasi via Skrip (Direkomendasikan)
+```bash
+git clone https://github.com/ekawipa/security-dashboard.git
+cd security-dashboard
+chmod +x install.sh
+sudo ./install.sh
 
 Metode 2: Eksekusi Langsung Skrip Python
 
-Berkat fitur pengecekan dependensi internal, Anda juga bisa langsung menjalankan skrip Python.
-
-    Unduh Skrip Utama
-    Unduh hanya file security_dashboard.py.
-
-    Berikan Izin Eksekusi
-
-    chmod +x security_dashboard.py
-
-
-    Jalankan Skrip
-    Saat dijalankan pertama kali, skrip akan memeriksa dependensi yang hilang dan meminta izin Anda untuk menginstalnya.
-
-    sudo ./security_dashboard.py
-
+wget https://raw.githubusercontent.com/ekawipa/security-dashboard/main/security_dashboard.py
+chmod +x security_dashboard.py
+sudo ./security_dashboard.py
 
 Menjalankan Aplikasi
 
-Setelah instalasi, jalankan dashboard kapan saja dengan perintah:
-
 sudo ./security_dashboard.py
 
+📝 Logging & Audit Trail
 
-📝 Pencatatan (Logging)
+Setiap sesi akan otomatis membuat log di direktori logs/ dengan format:
 
-Fitur ini sangat penting untuk analisis pasca-audit. Setiap kali Anda menjalankan dashboard, sebuah file log baru akan dibuat di dalam direktori logs/.
+logs/dashboard-session-2025-08-16_14-30-00.log
 
-Contoh nama file: logs/dashboard-session-2025-08-16_14-30-00.log
+Log berisi:
 
-File ini berisi:
+    Perintah yang dieksekusi
 
-    Perintah yang dieksekusi.
+    Output stdout & stderr
 
-    Output standar (stdout) dan error standar (stderr) dari perintah yang penting.
+    Status (sukses/gagal)
 
-    Pesan status (sukses atau gagal).
-
-Ini memungkinkan Anda untuk meninjau kembali hasil pemindaian atau diagnosis tanpa harus menjalankan ulang perintahnya.
-Struktur File Repositori
+📂 Struktur Repositori
 
 .
 ├── security_dashboard.py   # Skrip utama aplikasi Python
-├── install.sh              # Skrip untuk instalasi otomatis semua dependensi
-├── logs/                   # Direktori (dibuat otomatis) untuk menyimpan file log sesi
-└── README.md               # File dokumentasi ini
+├── install.sh              # Skrip instalasi otomatis dependensi
+├── logs/                   # Direktori log (dibuat otomatis)
+└── README.md               # Dokumentasi
 
+🤝 Kontribusi
 
-Kontribusi
+Kontribusi sangat terbuka 🙌
 
-Kontribusi, laporan bug, atau permintaan fitur sangat kami hargai! Silakan buat Issue baru di repositori GitHub ini untuk memulai diskusi.
-Lisensi
+    Buat Issue untuk bug/fitur baru
 
-Proyek ini dilisensikan di bawah Lisensi MIT.
+    Ajukan Pull Request untuk perbaikan
 
-Author : Eka W. Prasetya (defsecOPS @ekawprasetya)
+📜 Lisensi
+
+Proyek ini dilisensikan di bawah MIT License.
+Author: Eka W. Prasetya (defsecOPS · @ekawprasetya)
